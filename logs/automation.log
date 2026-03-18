@@ -1,0 +1,9 @@
+2026-03-18 16:25:21 [main] INFO  com.shashank.example.automationdemo.runner.AppTest - Start set up report
+2026-03-18 16:25:29 [main] INFO  com.shashank.example.automationdemo.runner.AppTest - Start validLogin Testing
+2026-03-18 16:25:32 [main] INFO  com.shashank.example.automationdemo.runner.AppTest - Username read from Excel File: Admin
+2026-03-18 16:25:32 [main] INFO  com.shashank.example.automationdemo.runner.AppTest - Password read from Excel File: admin123
+2026-03-18 16:25:32 [main] INFO  com.shashank.example.automationdemo.runner.AppTest - Login Button clicked
+2026-03-18 16:25:32 [main] INFO  com.shashank.example.automationdemo.runner.AppTest - Expected text read from Excel File: Dashboard
+2026-03-18 16:25:42 [main] INFO  com.shashank.example.automationdemo.runner.AppTest - Verify Dashboard Text Completed
+2026-03-18 16:25:42 [main] INFO  com.shashank.example.automationdemo.runner.AppTest - End validLogin Testing
+2026-03-18 16:25:42 [main] INFO  com.shashank.example.automationdemo.runner.AppTest - End set up report
