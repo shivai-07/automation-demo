@@ -1,9 +1,21 @@
-2026-03-18 16:25:21 [main] INFO  com.shashank.example.automationdemo.runner.AppTest - Start set up report
-2026-03-18 16:25:29 [main] INFO  com.shashank.example.automationdemo.runner.AppTest - Start validLogin Testing
-2026-03-18 16:25:32 [main] INFO  com.shashank.example.automationdemo.runner.AppTest - Username read from Excel File: Admin
-2026-03-18 16:25:32 [main] INFO  com.shashank.example.automationdemo.runner.AppTest - Password read from Excel File: admin123
-2026-03-18 16:25:32 [main] INFO  com.shashank.example.automationdemo.runner.AppTest - Login Button clicked
-2026-03-18 16:25:32 [main] INFO  com.shashank.example.automationdemo.runner.AppTest - Expected text read from Excel File: Dashboard
-2026-03-18 16:25:42 [main] INFO  com.shashank.example.automationdemo.runner.AppTest - Verify Dashboard Text Completed
-2026-03-18 16:25:42 [main] INFO  com.shashank.example.automationdemo.runner.AppTest - End validLogin Testing
-2026-03-18 16:25:42 [main] INFO  com.shashank.example.automationdemo.runner.AppTest - End set up report
+2026-03-23 23:16:50 [main] INFO  com.shashank.example.automationdemo.runner.AppTest - Start set up report
+2026-03-23 23:16:58 [main] INFO  com.shashank.example.automationdemo.runner.AppTest - Start invalid Login Testing
+2026-03-23 23:16:58 [main] INFO  com.shashank.example.automationdemo.runner.AppTest - TC2-Invalid Login test added to report.
+2026-03-23 23:16:59 [main] INFO  com.shashank.example.automationdemo.runner.AppTest - Username read from Excel File: dummy
+2026-03-23 23:16:59 [main] INFO  com.shashank.example.automationdemo.pages.LoginPageActions - Username entered as dummy
+2026-03-23 23:16:59 [main] INFO  com.shashank.example.automationdemo.runner.AppTest - Password read from Excel File: dummy123
+2026-03-23 23:17:00 [main] INFO  com.shashank.example.automationdemo.pages.LoginPageActions - Password entered  as dummy123
+2026-03-23 23:17:00 [main] INFO  com.shashank.example.automationdemo.pages.LoginPageActions - Login Button clicked
+2026-03-23 23:17:00 [main] INFO  com.shashank.example.automationdemo.runner.AppTest - Expected text read from Excel File: Invalid credentials
+2026-03-23 23:17:02 [main] INFO  com.shashank.example.automationdemo.pages.LoginPageActions - Verified Invalid credentials Text contain in Error message.
+2026-03-23 23:17:02 [main] INFO  com.shashank.example.automationdemo.runner.AppTest - End invalid Login Testing
+2026-03-23 23:17:09 [main] INFO  com.shashank.example.automationdemo.runner.AppTest - Start valid Login Testing
+2026-03-23 23:17:09 [main] INFO  com.shashank.example.automationdemo.runner.AppTest - Username read from Excel File: Admin
+2026-03-23 23:17:10 [main] INFO  com.shashank.example.automationdemo.pages.LoginPageActions - Username entered as Admin
+2026-03-23 23:17:10 [main] INFO  com.shashank.example.automationdemo.runner.AppTest - Password read from Excel File: admin123
+2026-03-23 23:17:10 [main] INFO  com.shashank.example.automationdemo.pages.LoginPageActions - Password entered  as admin123
+2026-03-23 23:17:12 [main] INFO  com.shashank.example.automationdemo.pages.LoginPageActions - Login Button clicked
+2026-03-23 23:17:12 [main] INFO  com.shashank.example.automationdemo.runner.AppTest - Expected text read from Excel File: Dashboard
+2026-03-23 23:17:13 [main] INFO  com.shashank.example.automationdemo.pages.DashboradPageActions - Dashboard page loaded successfully
+2026-03-23 23:17:13 [main] INFO  com.shashank.example.automationdemo.runner.AppTest - End valid Login Testing
+2026-03-23 23:17:14 [main] INFO  com.shashank.example.automationdemo.runner.AppTest - End set up report

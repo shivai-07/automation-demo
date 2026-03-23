@@ -38,38 +38,33 @@ public class AppTest extends BaseTest {
     @Test
     public void validLogin() {
         System.out.println(logger);
-        logger.info("Start validLogin Testing");
+        logger.info("Start valid Login Testing");
         try{
             extentTest = extentReports.createTest("TC1-Valid Login");
 
-            LoginPageActions loginPageActions = new LoginPageActions(driver);
+            LoginPageActions loginPageActions = new LoginPageActions(driver,extentTest);
 
-            String username = ExcelManager.readData("./testdata/logindata.xlsx","Sheet1",1,0);
-            loginPageActions.enterUsername(username);
-            logger.info("Username read from Excel File: " + username);
-            extentTest.info("Username entered as " + username);
+            String userName = ExcelManager.readData("./testdata/logindata.xlsx","Sheet1",1,0);
+            logger.info("Username read from Excel File: %s".formatted(userName));
+            loginPageActions.enterUsername(userName);
 
-            String password = ExcelManager.readData("./testdata/logindata.xlsx","Sheet1",1,1);
-            loginPageActions.enterPassword(password);
-            logger.info("Password read from Excel File: " + password);
-            extentTest.info("Password entered  as " + password);
+            String pass = ExcelManager.readData("./testdata/logindata.xlsx","Sheet1",1,1);
+            logger.info("Password read from Excel File: %s".formatted(pass));
+            loginPageActions.enterPassword(pass);
 
             loginPageActions.clickLoginButton();
-            logger.info("Login Button clicked");
-            extentTest.info("Clicked on login button");
 
-            DashboradPageActions dashboradPageActions = new DashboradPageActions(driver);
+            DashboradPageActions dashboradPageActions = new DashboradPageActions(driver,extentTest);
             String expectedText = ExcelManager.readData("./testdata/logindata.xlsx","Sheet1",1,2);
-            logger.info("Expected text read from Excel File: " + expectedText);
-            dashboradPageActions.verifyDashboardText(expectedText,extentTest);
-            logger.info("Verify Dashboard Text Completed");
+            logger.info("Expected text read from Excel File: %s".formatted(expectedText));
+            dashboradPageActions.verifyDashboardText(expectedText);
         }catch(Exception e){
-            logger.error("Exception occured while validating Login Page. an Error: "+e.getMessage());
+            logger.error("Exception occured while validating Login Page. an Error: %s".formatted(e.getMessage()));
         }
-        logger.info("End validLogin Testing");
+        logger.info("End valid Login Testing");
     }
 
-    @Test(enabled = false)
+    @Test(enabled = true)
     public void inValidLogin() {
         logger.info("Start invalid Login Testing");
         try
@@ -77,28 +72,24 @@ public class AppTest extends BaseTest {
             extentTest = extentReports.createTest("TC2-Invalid Login");
             logger.info("TC2-Invalid Login test added to report.");
 
-            LoginPageActions loginPageActions = new LoginPageActions(driver);
+            LoginPageActions loginPageActions = new LoginPageActions(driver,extentTest);
 
             String username = ExcelManager.readData("./testdata/logindata.xlsx","Sheet1",2,0);
+            logger.info(String.format("Username read from Excel File: %s", username));
             loginPageActions.enterUsername(username);
-            logger.info("Username read from Excel File: " + username);
-            extentTest.info("Username entered as " + username);
 
             String password = ExcelManager.readData("./testdata/logindata.xlsx","Sheet1",2,1);
+            logger.info(String.format("Password read from Excel File: %s", password));
             loginPageActions.enterPassword(password);
-            logger.info("Password read from Excel File: " + password);
-            extentTest.info("Password entered  as " + password);
 
             loginPageActions.clickLoginButton();
-            logger.info("Login Button clicked");
-            extentTest.info("Clicked on login button");
 
             String expectedText = ExcelManager.readData("./testdata/logindata.xlsx","Sheet1",2,2);
-            logger.info("Expected text read from Excel File: " + expectedText);
-            loginPageActions.verifyInvalidTextContains(expectedText,extentTest);
+            logger.info("Expected text read from Excel File: %s".formatted(expectedText));
+            loginPageActions.verifyInvalidTextContains(expectedText);
         }catch(Exception e){
-            logger.error("Exception occured while validating Login Page. an Error: "+e.getMessage());
+            logger.error("Exception occured while validating Login Page. an Error: %s".formatted(e.getMessage()));
         }
-        logger.info("Verify Invalid Text Contains Completed");
+        logger.info("End invalid Login Testing");
     }
 }

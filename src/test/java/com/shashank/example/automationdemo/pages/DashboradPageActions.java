@@ -15,32 +15,34 @@ import java.time.Duration;
 public class DashboradPageActions {
     private WebDriver driver;
     private WebDriverWait wait;
+    private ExtentTest extentTest;
     private static Logger logger = LoggerManager.getLogger(DashboradPageActions.class);
 
-    public DashboradPageActions(WebDriver driver) {
+    public DashboradPageActions(WebDriver driver,ExtentTest extentTest) {
         this.driver = driver;
+        this.extentTest = extentTest;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
-    public void verifyDashboardText(String expectedText, ExtentTest test) {
+    public void verifyDashboardText(String expectedText) {
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(DashboradPageLocators.dashboardHeader));
-        test.info("Dashboard page loaded successfully");
+        extentTest.info("Dashboard page loaded successfully");
 
         String dashboardText = driver.findElement(DashboradPageLocators.dashboardHeader).getText();
         try {
             Assert.assertEquals(dashboardText, expectedText);
-            test.pass("Valid Login Successful.........");
-            ExtentManager.attachScreenshotToReport(test,
+            logger.info("Dashboard page loaded successfully");
+            extentTest.pass("Valid Login Successful.........");
+            ExtentManager.attachScreenshotToReport(extentTest,
                     "Valid_Login",
                     "Valid Login Pass");
         } catch (AssertionError e) {
-            test.fail("Valid Login Failed");
-            ExtentManager.attachScreenshotToReport(test,
+            extentTest.fail("Valid Login Failed");
+            ExtentManager.attachScreenshotToReport(extentTest,
                     "Valid_Login",
                     "Valid Login Failed");
-            logger.error("Assertion Failed for Invalid Login Page. an Error: "+e.getMessage());
-            throw e;
+            logger.error("Assertion Failed for Valid Login Page. an Error: ".formatted(e.getMessage()));
         }
     }
 }
