@@ -12,13 +12,13 @@ import org.testng.Assert;
 
 import java.time.Duration;
 
-public class DashboradPageActions {
+public class DashboardPageActions {
     private WebDriver driver;
     private WebDriverWait wait;
     private ExtentTest extentTest;
-    private static Logger logger = LoggerManager.getLogger(DashboradPageActions.class);
+    private static Logger logger = LoggerManager.getLogger(DashboardPageActions.class);
 
-    public DashboradPageActions(WebDriver driver,ExtentTest extentTest) {
+    public DashboardPageActions(WebDriver driver,ExtentTest extentTest) {
         this.driver = driver;
         this.extentTest = extentTest;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
