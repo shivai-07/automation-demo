@@ -4,7 +4,7 @@ package com.shashank.example.automationdemo.runner;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 
-import com.shashank.example.automationdemo.pages.DashboradPageActions;
+import com.shashank.example.automationdemo.pages.DashboardPageActions;
 import com.shashank.example.automationdemo.pages.LoginPageActions;
 import com.shashank.example.automationdemo.utill.BaseTest;
 import com.shashank.example.automationdemo.utill.ExcelManager;
@@ -54,7 +54,7 @@ public class AppTest extends BaseTest {
 
             loginPageActions.clickLoginButton();
 
-            DashboradPageActions dashboradPageActions = new DashboradPageActions(driver,extentTest);
+            DashboardPageActions dashboradPageActions = new DashboardPageActions(driver,extentTest);
             String expectedText = ExcelManager.readData("./testdata/logindata.xlsx","Sheet1",1,2);
             logger.info("Expected text read from Excel File: %s".formatted(expectedText));
             dashboradPageActions.verifyDashboardText(expectedText);
